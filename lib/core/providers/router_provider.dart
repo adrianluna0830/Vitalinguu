@@ -28,7 +28,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/language-main-screen',
-        builder: (context, state) => const LanguageMainScreen(),
+        builder: (context, state) =>  LanguageMainScreen(),
       ),
       GoRoute(
         path: '/main-configuration-screen',
