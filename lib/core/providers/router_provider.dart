@@ -1,38 +1,36 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vitalingu/core/providers/config_providers.dart';
-import 'package:vitalingu/presentation/screens/choose_language_screen.dart';
-import 'package:vitalingu/presentation/screens/language_main_screen.dart';
-import 'package:vitalingu/presentation/screens/main_configuration_screen.dart';
+import 'package:vitalingu/core/constants/route_paths_constants.dart';
+import 'package:vitalingu/core/providers/global_configuration_provider.dart';
+import 'package:vitalingu/features/language_selection/presentation/screens/language_selection_screen.dart';
+import 'package:vitalingu/features/language_selection/presentation/screens/language_learning_screen.dart';
+import 'package:vitalingu/features/configuration/presentation/screens/configuration_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
-  final configService = ref.read(configServiceProvider);
+  final configService = ref.read(globalConfigurationProvider);
   
   return GoRouter(
-    initialLocation: '/choose-language-screen',
+    initialLocation: Routes.chooseLanguageScreen,
     redirect: (context, state) async {
-      final hasConfig = await configService.hasConfiguration();
-      final isConfigValid = hasConfig ? await configService.isConfigurationValid() : false;
+      final config = await configService.getOrCreateConfiguration();
 
-      if (!hasConfig || !isConfigValid) {
-        if (state.fullPath != '/main-configuration-screen') {
-          return '/main-configuration-screen';
-        }
+      if (!config.isValid) {
+        return Routes.globalConfigurationScreen;
       }
       return null;
     },
     routes: [
       GoRoute(
-        path: '/choose-language-screen',
-        builder: (context, state) => const ChooseLanguageScreen(),
+        path: Routes.chooseLanguageScreen,
+        builder: (context, state) => const LanguageSelectionScreen(),
       ),
       GoRoute(
-        path: '/language-main-screen',
-        builder: (context, state) =>  LanguageMainScreen(),
+        path: Routes.languageMainScreen,
+        builder: (context, state) => LanguageLearningScreen(),
       ),
       GoRoute(
-        path: '/main-configuration-screen',
-        builder: (context, state) => const MainConfigurationScreen(),
+        path: Routes.globalConfigurationScreen,
+        builder: (context, state) => ConfigurationScreen(service: configService),
       ),
     ],
   );

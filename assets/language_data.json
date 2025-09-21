@@ -1,0 +1,92 @@
+{
+  "languages": [
+    {
+      "name": "Spanish",
+      "lessons": [
+        "Greetings",
+        "Numbers",
+        "Colors",
+        "Days of the week",
+        "Fruits",
+        "Animals",
+        "Body parts",
+        "Food and drinks",
+        "Family",
+        "Clothes"
+      ],
+      "frequency_dictionary": [
+        { "word": "el", "frequency": 22038615 },
+        { "word": "de", "frequency": 12545825 },
+        { "word": "que", "frequency": 10741073 },
+        { "word": "y", "frequency": 10178245 },
+        { "word": "a", "frequency": 8799753 }
+      ]
+    },
+    {
+      "name": "English",
+      "lessons": [
+        "Greetings",
+        "Numbers",
+        "Colors",
+        "Days of the week",
+        "Fruits",
+        "Animals",
+        "Body parts",
+        "Food and drinks",
+        "Family",
+        "Clothes"
+      ],
+      "frequency_dictionary": [
+        { "word": "the", "frequency": 231358511 },
+        { "word": "of", "frequency": 131519427 },
+        { "word": "and", "frequency": 129976379 },
+        { "word": "to", "frequency": 121369808 },
+        { "word": "a", "frequency": 90811764 }
+      ]
+    },
+    {
+      "name": "French",
+      "lessons": [
+        "Greetings",
+        "Numbers",
+        "Colors",
+        "Days of the week",
+        "Fruits",
+        "Animals",
+        "Body parts",
+        "Food and drinks",
+        "Family",
+        "Clothes"
+      ],
+      "frequency_dictionary": [
+        { "word": "de", "frequency": 17632545 },
+        { "word": "la", "frequency": 14839472 },
+        { "word": "et", "frequency": 13421653 },
+        { "word": "le", "frequency": 11823492 },
+        { "word": "à", "frequency": 9984321 }
+      ]
+    },
+    {
+      "name": "German",
+      "lessons": [
+        "Greetings",
+        "Numbers",
+        "Colors",
+        "Days of the week",
+        "Fruits",
+        "Animals",
+        "Body parts",
+        "Food and drinks",
+        "Family",
+        "Clothes"
+      ],
+      "frequency_dictionary": [
+        { "word": "der", "frequency": 16951846 },
+        { "word": "und", "frequency": 12897532 },
+        { "word": "die", "frequency": 12143012 },
+        { "word": "in", "frequency": 9712334 },
+        { "word": "zu", "frequency": 8754219 }
+      ]
+    }
+  ]
+}

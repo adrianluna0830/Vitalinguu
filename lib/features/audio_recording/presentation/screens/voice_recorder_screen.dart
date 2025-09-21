@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:record/record.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:vitalingu/presentation/widgets/gradient_bar_painter.dart';
-
-class LanguageMainScreen extends StatefulWidget {
-  const LanguageMainScreen({super.key});
+import 'package:vitalingu/shared/presentation/widgets/audio_visualizer_painter.dart';
+class VoiceRecorderScreen extends StatefulWidget {
+  const VoiceRecorderScreen({super.key});
 
   @override
-  State<LanguageMainScreen> createState() => _LanguageMainScreenState();
+  State<VoiceRecorderScreen> createState() => _VoiceRecorderScreenState();
 }
 
-class _LanguageMainScreenState extends State<LanguageMainScreen> {
+
+class _VoiceRecorderScreenState extends State<VoiceRecorderScreen> {
   final _recorder = AudioRecorder();
   double _amplitude = 0.0;
   StreamSubscription<Amplitude>? _amplitudeSub;
@@ -31,13 +31,21 @@ class _LanguageMainScreenState extends State<LanguageMainScreen> {
   Future<void> _startRecording() async {
     if (!await Permission.microphone.request().isGranted) return;
     final dir = await getTemporaryDirectory();
-    await _recorder.start(const RecordConfig(encoder: AudioEncoder.wav), path: "${dir.path}/temp.m4a");
+    await _recorder.start(
+      const RecordConfig(encoder: AudioEncoder.wav),
+      path: "${dir.path}/temp.m4a",
+    );
 
-    _amplitudeSub = _recorder.onAmplitudeChanged(const Duration(milliseconds: 25)).listen((a) {
-      final normalized = ((a.current - _minDb) / (_maxDb - _minDb)).clamp(0.0, 1.0);
-      _amplitude = (1 - _smoothing) * _amplitude + _smoothing * normalized;
-      if (mounted) setState(() {});
-    });
+    _amplitudeSub = _recorder
+        .onAmplitudeChanged(const Duration(milliseconds: 25))
+        .listen((a) {
+          final normalized = ((a.current - _minDb) / (_maxDb - _minDb)).clamp(
+            0.0,
+            1.0,
+          );
+          _amplitude = (1 - _smoothing) * _amplitude + _smoothing * normalized;
+          if (mounted) setState(() {});
+        });
   }
 
   Future<void> _stopRecording() async {
@@ -55,11 +63,14 @@ class _LanguageMainScreenState extends State<LanguageMainScreen> {
   }
 
   Widget _buildVisualizer() {
-    return Container(
+    return SizedBox(
       height: _visHeight,
       width: _visWidth,
       child: CustomPaint(
-        painter: GradientBarPainter(value: _amplitude, containerRadius: _visRadius),
+        painter: AudioVisualizerPainter(
+          value: _amplitude,
+          containerRadius: _visRadius,
+        ),
       ),
     );
   }
@@ -71,7 +82,10 @@ class _LanguageMainScreenState extends State<LanguageMainScreen> {
       child: FloatingActionButton(
         heroTag: 'record_button',
         onPressed: _toggleRecording,
-        child: Icon(isRecording ? Icons.stop_rounded : Icons.mic_rounded, size: _buttonSize * 0.5),
+        child: Icon(
+          isRecording ? Icons.stop_rounded : Icons.mic_rounded,
+          size: _buttonSize * 0.5,
+        ),
       ),
     );
   }
@@ -86,7 +100,7 @@ class _LanguageMainScreenState extends State<LanguageMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Language Main Screen")),
+      appBar: AppBar(title: const Text("Audio Recorder")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

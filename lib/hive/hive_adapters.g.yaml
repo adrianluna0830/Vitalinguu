@@ -3,9 +3,9 @@
 # Check in to version control
 nextTypeId: 1
 types:
-  GlobalConfiguration:
+  AppConfiguration:
     typeId: 0
-    nextIndex: 3
+    nextIndex: 4
     fields:
       geminiApiKey:
         index: 0
@@ -13,3 +13,5 @@ types:
         index: 1
       nativeLanguage:
         index: 2
+      azure_region:
+        index: 3

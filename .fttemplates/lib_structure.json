@@ -1,0 +1,34 @@
+{
+  "name": "Lib Project Structure",
+  "omitParentDirectory": true,
+  "structure": [
+    { "fileName": "lib/core/constants", "template": "EmptyDirectory" },
+    { "fileName": "lib/core/providers", "template": "EmptyDirectory" },
+    { "fileName": "lib/core/services", "template": "EmptyDirectory" },
+
+    { "fileName": "lib/shared/models", "template": "EmptyDirectory" },
+    { "fileName": "lib/shared/repositories", "template": "EmptyDirectory" },
+    { "fileName": "lib/shared/widgets", "template": "EmptyDirectory" },
+    { "fileName": "lib/shared/widgets/audio_visualizer", "template": "EmptyDirectory" },
+
+    { "fileName": "lib/features/language_selection/data/repositories", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/language_selection/domain/entities", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/language_selection/domain/repositories", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/language_selection/domain/usecases", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/language_selection/presentation/providers", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/language_selection/presentation/screens", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/language_selection/presentation/widgets", "template": "EmptyDirectory" },
+
+    { "fileName": "lib/features/user_configuration/data/services", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/user_configuration/domain/entities", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/user_configuration/presentation/providers", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/user_configuration/presentation/screens", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/user_configuration/presentation/widgets", "template": "EmptyDirectory" },
+
+    { "fileName": "lib/features/audio_recording/data/services", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/audio_recording/domain/entities", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/audio_recording/domain/services", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/audio_recording/presentation/screens", "template": "EmptyDirectory" },
+    { "fileName": "lib/features/audio_recording/presentation/widgets", "template": "EmptyDirectory" }
+  ]
+}

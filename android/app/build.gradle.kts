@@ -7,7 +7,6 @@ val localProperties = Properties().apply {
     }
 }
 
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -31,7 +30,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.vitalingu"
-        minSdk = localProperties.getProperty("flutter.minSdkVersion")?.toInt() ?: 21
+        minSdk = 24  // Cambié esto para evitar el warning
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -48,4 +47,8 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    implementation("com.microsoft.cognitiveservices.speech:client-sdk:1.43.0")
 }

@@ -7,6 +7,8 @@ import 'package:vitalingu/hive/hive_registrar.g.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+
+
   await Hive.initFlutter();
   Hive.registerAdapters();
 

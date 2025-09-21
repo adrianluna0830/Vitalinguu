@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class RecordButton extends StatelessWidget {
+class VoiceRecordButton extends StatelessWidget {
   final bool grabando;
   final VoidCallback onToggle;
   final VoidCallback onCancel;
   final double recordButtonSize; // <--- nuevo parámetro
   final double resetButtonSize;
 
-  const RecordButton({
+  const VoiceRecordButton({
     super.key,
     required this.grabando,
     required this.onToggle,

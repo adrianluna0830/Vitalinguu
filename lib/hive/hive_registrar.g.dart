@@ -7,12 +7,12 @@ import 'package:vitalingu/hive/hive_adapters.dart';
 
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {
-    registerAdapter(GlobalConfigurationAdapter());
+    registerAdapter(AppConfigurationAdapter());
   }
 }
 
 extension IsolatedHiveRegistrar on IsolatedHiveInterface {
   void registerAdapters() {
-    registerAdapter(GlobalConfigurationAdapter());
+    registerAdapter(AppConfigurationAdapter());
   }
 }

@@ -1,9 +1,9 @@
 import 'package:hive_ce/hive.dart';
 
-class HiveRepository<T extends HiveObject> {
+class LocalStorageRepository<T extends HiveObject> {
   final String boxName;
 
-  HiveRepository(this.boxName);
+  LocalStorageRepository(this.boxName);
 
   Future<Box<T>> _getBox() async {
     if (!Hive.isBoxOpen(boxName)) {
@@ -12,7 +12,7 @@ class HiveRepository<T extends HiveObject> {
     return Hive.box<T>(boxName);
   }
 
-  Future<void> add(T item, {dynamic key}) async {
+  Future<void> add(T item, Set<String> set, {dynamic key}) async {
     final box = await _getBox();
     if (key != null) {
       await box.put(key, item);

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class GradientBarPainter extends CustomPainter {
+class AudioVisualizerPainter extends CustomPainter {
   final double value;
   final double containerRadius;
 
-  GradientBarPainter({required this.value, required this.containerRadius});
+  AudioVisualizerPainter({required this.value, required this.containerRadius});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -38,7 +38,7 @@ class GradientBarPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant GradientBarPainter oldDelegate) {
+  bool shouldRepaint(covariant AudioVisualizerPainter oldDelegate) {
     return oldDelegate.value != value ||
         oldDelegate.containerRadius != containerRadius;
   }
