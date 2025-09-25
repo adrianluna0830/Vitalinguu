@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:vitalingu/core/constants/app_constants.dart';
+import 'package:vitalingu/core/constants/navigation_routes.dart';
+import 'package:vitalingu/core/providers/global_configuration_provider.dart';
 import 'package:vitalingu/shared/data/models/app_configuration.dart';
-import 'package:vitalingu/features/configuration/presentation/screens/configuration_service.dart';
 import 'package:go_router/go_router.dart';
 
-class RoutePaths {
-  static const chooseLanguageScreen = '/language-selection';
-  static const languageMainScreen = '/language-learning';
-  static const globalConfigurationScreen = '/configuration';
-}
 
 class ConfigurationScreen extends ConsumerStatefulWidget {
   final ConfigurationService service;
@@ -129,7 +125,7 @@ class _GlobalConfigurationMainScreen extends ConsumerState<ConfigurationScreen> 
 
         // Navegar usando la constante
         if (context.mounted) {
-          GoRouter.of(context).go(RoutePaths.chooseLanguageScreen);
+          GoRouter.of(context).go(NavigationRoutes.chooseLanguageScreen);
         }
       },
       child: const Text("Continue"),

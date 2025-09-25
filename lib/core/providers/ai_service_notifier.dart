@@ -1,15 +1,15 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:vitalingu/shared/domain/repositories/ai_generation_repository.dart';
+import 'package:vitalingu/shared/domain/repositories/ai_service.dart';
 
-class AIServiceNotifier extends Notifier<AIGenerationRepository?> {
+class AIServiceNotifier extends Notifier<AIService?> {
   @override
-  AIGenerationRepository? build() => null; 
+  AIService? build() => null; 
 
-  void setRepository(AIGenerationRepository repo) {
+  void setRepository(AIService repo) {
     state = repo;
   }
 }
 
 final aiGenerationRepositoryProvider =
-    NotifierProvider<AIServiceNotifier, AIGenerationRepository?>(
+    NotifierProvider<AIServiceNotifier, AIService?>(
         AIServiceNotifier.new);
