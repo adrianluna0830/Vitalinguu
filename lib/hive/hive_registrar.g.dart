@@ -8,11 +8,15 @@ import 'package:vitalinguu/hive/hive_adapters.dart';
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {
     registerAdapter(AppSettingsAdapter());
+    registerAdapter(LanguageDataAdapter());
+    registerAdapter(LanguageProgressDataAdapter());
   }
 }
 
 extension IsolatedHiveRegistrar on IsolatedHiveInterface {
   void registerAdapters() {
     registerAdapter(AppSettingsAdapter());
+    registerAdapter(LanguageDataAdapter());
+    registerAdapter(LanguageProgressDataAdapter());
   }
 }

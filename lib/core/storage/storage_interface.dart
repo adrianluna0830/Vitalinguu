@@ -12,4 +12,5 @@ abstract class StorageInterface<T extends IdBase> {
   Future<void> save(T item);
   Future<void> delete(T item);
   Future<void> update(T item);
+  Future<int> count();
 }

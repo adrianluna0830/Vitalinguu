@@ -59,4 +59,9 @@ class HiveStorage<T extends IdBase> implements StorageInterface<T>
     final item = box.get(id);
     return item != null ? Option.of(item) : Option.none();
   }
+  
+  @override
+  Future<int> count() {
+    return Future.value(box.length);
+  }
 }
