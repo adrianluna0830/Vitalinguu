@@ -5,12 +5,16 @@ import 'package:vitalinguu/core/storage/storage_interface.dart';
 
 class HiveStorage<T extends IdBase> implements StorageInterface<T>
 {
-  Box<T> box;
-  HiveStorage({Option<String> name = const None()}) : box = Hive.box<T>(name.getOrElse(() => '${T}_box'));
+  late Box<T> box;
+  late final String boxName;
+
+  HiveStorage({Option<String> name = const None()}) {
+    boxName = name.getOrElse(() => '${T}_box');
+  }
   @override
   Future<void> initDB() async{
-    if (!Hive.isBoxOpen(box.name)) {
-      await Hive.openBox<T>(box.name);
+    if (!Hive.isBoxOpen(boxName)) {
+      box = await Hive.openBox<T>(boxName);
     }
   }
 
@@ -48,5 +52,11 @@ class HiveStorage<T extends IdBase> implements StorageInterface<T>
   @override
   Future<void> update(T item) {
     return box.put(item.id, item);
+  }
+  
+  @override
+  Option<T> getByIdSync(String id) {
+    final item = box.get(id);
+    return item != null ? Option.of(item) : Option.none();
   }
 }

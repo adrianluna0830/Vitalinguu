@@ -4,7 +4,6 @@ import 'package:vitalinguu/core/base/id_base.dart';
 
 part 'app_settings.mapper.dart';
 
-
 @MappableClass()
 class AppSettings extends IdBase<String> with AppSettingsMappable {
   final String nativeLanguage;
@@ -23,8 +22,8 @@ class AppSettings extends IdBase<String> with AppSettingsMappable {
   }): super(id: Some(globalId));
 
   bool get isValid =>
-      nativeLanguage.isNotEmpty &&
-      geminiApiKey.isNotEmpty &&
-      microsoftApiKey.isNotEmpty &&
-      microsoftRegion.isNotEmpty;
+      nativeLanguage.trim().isNotEmpty &&
+      geminiApiKey.trim().isNotEmpty &&
+      microsoftApiKey.trim().isNotEmpty &&
+      microsoftRegion.trim().isNotEmpty;
 }
