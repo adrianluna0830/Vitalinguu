@@ -15,6 +15,8 @@ class HiveStorage<T extends IdBase> implements StorageInterface<T>
   Future<void> initDB() async{
     if (!Hive.isBoxOpen(boxName)) {
       box = await Hive.openBox<T>(boxName);
+    } else {
+      box = Hive.box<T>(boxName);
     }
   }
 

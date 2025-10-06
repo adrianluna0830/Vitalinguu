@@ -13,8 +13,6 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:vitalinguu/core/language_data/models/language_data.dart'
     as _i1058;
-import 'package:vitalinguu/core/language_data/view_models/language_data_manager.dart'
-    as _i133;
 import 'package:vitalinguu/core/settings/models/app_settings.dart' as _i777;
 import 'package:vitalinguu/core/settings/view_models/app_settings_manager.dart'
     as _i327;
@@ -37,9 +35,6 @@ extension GetItInjectableX on _i174.GetIt {
     await gh.factoryAsync<_i283.StorageInterface<_i1058.LanguageData>>(
       () => modules.languagesDataStorage,
       preResolve: true,
-    );
-    gh.lazySingleton<_i133.LanguageDataManager>(
-      () => _i133.LanguageDataManager(),
     );
     gh.lazySingleton<_i327.AppSettingsManager>(
       () => _i327.AppSettingsManager(),
