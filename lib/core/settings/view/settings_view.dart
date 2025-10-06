@@ -1,13 +1,24 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vitalinguu/core/language_data/models/language_data.dart';
 import 'package:vitalinguu/core/language_data/models/language_local.dart';
-import 'package:vitalinguu/core/navigation/routes.dart';
+import 'package:vitalinguu/core/navigation/navigation_service.dart';
 import 'package:vitalinguu/core/settings/models/app_settings.dart';
 import 'package:vitalinguu/core/settings/view_models/settings_view_model.dart';
+import 'package:vitalinguu/injection.dart';
 
-class SettingsView extends StatefulWidget {
+@RoutePage()
+class SettingsView extends StatefulWidget implements AutoRouteWrapper {
   const SettingsView({super.key});
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider(
+      create: (_) => getIt<SettingsViewModel>(),
+      child: this,
+    );
+  }
 
   @override
   State<SettingsView> createState() => _SettingsViewState();
@@ -81,7 +92,8 @@ class _SettingsViewState extends State<SettingsView> {
     if (viewModel.state.isValid) {
       if (mounted) {
         _showSuccess('Settings saved successfully!');
-        const LanguageSelectionRoute().go(context);
+        // Usar NavigationService en lugar de navegar directamente desde el widget
+        await getIt<NavigationService>().replaceWithLanguageSelection();
       }
     } else {
       _showError('Please fill all required fields');
@@ -233,11 +245,11 @@ class LanguageDropdown extends StatelessWidget {
   final ValueChanged<LanguageData?> onChanged;
 
   const LanguageDropdown({
-    Key? key,
+    super.key,
     required this.selectedLanguage,
     required this.languages,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -246,7 +258,7 @@ class LanguageDropdown extends StatelessWidget {
         labelText: 'Select Language',
         border: OutlineInputBorder(),
       ),
-      value: selectedLanguage?.isValid == true ? selectedLanguage : null,
+      initialValue: selectedLanguage?.isValid == true ? selectedLanguage : null,
       items: languages.map((lang) {
         return DropdownMenuItem(
           value: lang,
@@ -264,11 +276,11 @@ class LocaleDropdown extends StatelessWidget {
   final ValueChanged<LanguageLocal?> onChanged;
 
   const LocaleDropdown({
-    Key? key,
+    super.key,
     required this.selectedLocal,
     required this.locales,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -277,7 +289,7 @@ class LocaleDropdown extends StatelessWidget {
         labelText: 'Select Locale',
         border: OutlineInputBorder(),
       ),
-      value: selectedLocal,
+      initialValue: selectedLocal,
       items: locales.map((local) {
         return DropdownMenuItem(
           value: local,

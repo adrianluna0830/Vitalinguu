@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:fpdart/fpdart.dart';
+import 'package:injectable/injectable.dart';
 import 'package:vitalinguu/core/constants/language_supported_features.dart';
 import 'package:vitalinguu/core/language_data/models/language_data.dart';
 import 'package:vitalinguu/core/settings/models/app_settings.dart';
 import 'package:vitalinguu/core/settings/view_models/app_settings_manager.dart';
-import 'package:vitalinguu/injection.dart';
 
 class SettingsState {
   final List<LanguageData> languages;
@@ -15,9 +15,13 @@ class SettingsState {
   SettingsState(this.languages, this.validationErrors, this.appSettings, {this.isValid = false});
 
 }
+
+@injectable
 class SettingsViewModel extends Cubit<SettingsState> {
-  final AppSettingsManager _appSettingsManager = getIt<AppSettingsManager>();
-  SettingsViewModel() : super(SettingsState(languageDataList, none(), getIt<AppSettingsManager>().appSettings));
+  final AppSettingsManager _appSettingsManager;
+  
+  SettingsViewModel(this._appSettingsManager) 
+      : super(SettingsState(languageDataList, none(), _appSettingsManager.appSettings));
 
   Future<void> updateAppSettings(AppSettings appSettings) async {
     final isValid = appSettings.isValid;

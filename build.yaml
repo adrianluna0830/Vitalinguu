@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      auto_route_generator:auto_route_generator:
+        generate_for:
+          - lib/**/*_view.dart
+        options:
+          enable_cached_builds: true
+      auto_route_generator:auto_router_generator:
+        generate_for:
+          - lib/core/navigation/app_router.dart
+        options:
+          enable_cached_builds: true

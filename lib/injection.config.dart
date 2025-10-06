@@ -13,9 +13,14 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:vitalinguu/core/language_data/models/language_data.dart'
     as _i1058;
+import 'package:vitalinguu/core/navigation/app_router.dart' as _i33;
+import 'package:vitalinguu/core/navigation/guards/settings_guard.dart' as _i923;
+import 'package:vitalinguu/core/navigation/navigation_service.dart' as _i958;
 import 'package:vitalinguu/core/settings/models/app_settings.dart' as _i777;
 import 'package:vitalinguu/core/settings/view_models/app_settings_manager.dart'
     as _i327;
+import 'package:vitalinguu/core/settings/view_models/settings_view_model.dart'
+    as _i522;
 import 'package:vitalinguu/core/storage/generic_storage_resolvers.dart'
     as _i190;
 import 'package:vitalinguu/core/storage/storage_interface.dart' as _i283;
@@ -38,6 +43,18 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i327.AppSettingsManager>(
       () => _i327.AppSettingsManager(),
+    );
+    gh.factory<_i923.SettingsGuard>(
+      () => _i923.SettingsGuard(gh<_i327.AppSettingsManager>()),
+    );
+    gh.factory<_i522.SettingsViewModel>(
+      () => _i522.SettingsViewModel(gh<_i327.AppSettingsManager>()),
+    );
+    gh.singleton<_i33.AppRouter>(
+      () => _i33.AppRouter(gh<_i923.SettingsGuard>()),
+    );
+    gh.factory<_i958.NavigationService>(
+      () => _i958.NavigationService(gh<_i33.AppRouter>()),
     );
     return this;
   }
