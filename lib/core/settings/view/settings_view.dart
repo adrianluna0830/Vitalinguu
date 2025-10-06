@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vitalinguu/core/language_data/models/language_data.dart';
+import 'package:vitalinguu/core/language_data/models/language_local.dart';
 import 'package:vitalinguu/core/navigation/routes.dart';
-import 'package:vitalinguu/core/settings/models/settings_state.dart';
+import 'package:vitalinguu/core/settings/models/app_settings.dart';
 import 'package:vitalinguu/core/settings/view_models/settings_view_model.dart';
 
 class SettingsView extends StatefulWidget {
@@ -11,67 +13,45 @@ class SettingsView extends StatefulWidget {
   State<SettingsView> createState() => _SettingsViewState();
 }
 
-class CustomTextField extends StatelessWidget {
-  final TextEditingController controller;
-  final String label;
-  final String hint;
-  final ValueChanged<String> onChanged;
-
-  const CustomTextField({
-    required this.controller,
-    required this.label,
-    required this.hint,
-    required this.onChanged,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
-        labelText: label,
-        border: const OutlineInputBorder(),
-        hintText: hint,
-      ),
-      onChanged: onChanged,
-    );
-  }
-}
-
-class CustomDropdown<T> extends StatelessWidget {
-  final String label;
-  final T? value;
-  final List<DropdownMenuItem<T>> items;
-  final ValueChanged<T?> onChanged;
-
-  const CustomDropdown({
-    required this.label,
-    required this.value,
-    required this.items,
-    required this.onChanged,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return DropdownButtonFormField<T>(
-      decoration: InputDecoration(
-        labelText: label,
-        border: const OutlineInputBorder(),
-      ),
-      value: value,
-      items: items,
-      onChanged: onChanged,
-    );
-  }
-}
-
 class _SettingsViewState extends State<SettingsView> {
   final _geminiController = TextEditingController();
   final _microsoftApiKeyController = TextEditingController();
   final _microsoftRegionController = TextEditingController();
-  bool _isInitialized = false;
+
+  LanguageData? _selectedLanguage;
+  LanguageLocal? _selectedLocal;
+
+  @override
+  void initState() {
+    super.initState();
+    final viewModel = context.read<SettingsViewModel>();
+    final currentSettings = viewModel.state.appSettings;
+
+    _geminiController.text = currentSettings.geminiApiKey;
+    _microsoftApiKeyController.text = currentSettings.microsoftApiKey;
+    _microsoftRegionController.text = currentSettings.microsoftRegion;
+
+    final savedLanguage = currentSettings.nativeLanguage;
+    if (savedLanguage.isValid) {
+      final matchingLanguage = viewModel.state.languages.firstWhere(
+        (lang) => lang.languageCode == savedLanguage.languageCode,
+        orElse: () => LanguageData(languageCode: '', languageLocal: []),
+      );
+
+      if (matchingLanguage.isValid) {
+        _selectedLanguage = matchingLanguage;
+        if (savedLanguage.languageLocal.isNotEmpty) {
+          final matchingLocale = matchingLanguage.languageLocal.firstWhere(
+            (local) => local.localCode == savedLanguage.languageLocal.first.localCode,
+            orElse: () => matchingLanguage.languageLocal.first,
+          );
+          _selectedLocal = matchingLocale;
+        } else if (matchingLanguage.languageLocal.isNotEmpty) {
+          _selectedLocal = matchingLanguage.languageLocal.first;
+        }
+      }
+    }
+  }
 
   @override
   void dispose() {
@@ -81,124 +61,53 @@ class _SettingsViewState extends State<SettingsView> {
     super.dispose();
   }
 
-  void _initializeFromState(SettingsState state) {
-    if (!_isInitialized && !state.isLoading) {
-      _geminiController.text = state.geminiApiKey;
-      _microsoftApiKeyController.text = state.microsoftApiKey;
-      _microsoftRegionController.text = state.microsoftRegion;
-      _isInitialized = true;
+  Future<void> _saveSettings() async {
+    final viewModel = context.read<SettingsViewModel>();
+
+    if (_selectedLanguage == null || _selectedLocal == null) {
+      _showError('Please select a language and locale');
+      return;
+    }
+
+    final newSettings = AppSettings(
+      nativeLanguage: _selectedLanguage!,
+      geminiApiKey: _geminiController.text,
+      microsoftApiKey: _microsoftApiKeyController.text,
+      microsoftRegion: _microsoftRegionController.text,
+    );
+
+    await viewModel.updateAppSettings(newSettings);
+
+    if (viewModel.state.isValid) {
+      if (mounted) {
+        _showSuccess('Settings saved successfully!');
+        const LanguageSelectionRoute().go(context);
+      }
+    } else {
+      _showError('Please fill all required fields');
     }
   }
 
-  Widget _buildLanguageDropdown(SettingsViewModel viewModel, List<String> uniqueLanguages) {
-    return BlocBuilder<SettingsViewModel, SettingsState>(
-      builder: (context, state) {
-        return CustomDropdown<String>(
-          label: 'Select Language',
-          value: state.selectedLanguageName,
-          items: uniqueLanguages.map((lang) {
-            return DropdownMenuItem(
-              value: lang,
-              child: Text(lang),
-            );
-          }).toList(),
-          onChanged: (value) {
-            if (value != null) {
-              viewModel.selectLanguage(value);
-            }
-          },
-        );
-      },
-    );
+  void _showError(String message) {
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 
-  Widget _buildLocaleDropdown(SettingsViewModel viewModel, List<String> availableLocales) {
-    return BlocBuilder<SettingsViewModel, SettingsState>(
-      builder: (context, state) {
-        return CustomDropdown<String>(
-          label: 'Select Locale',
-          value: state.selectedLanguage?.locale,
-          items: availableLocales.map((locale) {
-            return DropdownMenuItem(
-              value: locale,
-              child: Text(locale),
-            );
-          }).toList(),
-          onChanged: (value) {
-            if (value != null) {
-              viewModel.selectLocale(value);
-            }
-          },
-        );
-      },
-    );
-  }
-
-  Widget _buildApiConfiguration(SettingsViewModel viewModel) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        CustomTextField(
-          controller: _geminiController,
-          label: 'Gemini API Key',
-          hint: 'Enter your Gemini API Key',
-          onChanged: viewModel.updateGeminiApiKey,
+  void _showSuccess(String message) {
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          backgroundColor: Colors.green,
         ),
-        const SizedBox(height: 16),
-        CustomTextField(
-          controller: _microsoftApiKeyController,
-          label: 'Microsoft API Key',
-          hint: 'Enter your Microsoft API Key',
-          onChanged: viewModel.updateMicrosoftApiKey,
-        ),
-        const SizedBox(height: 16),
-        CustomTextField(
-          controller: _microsoftRegionController,
-          label: 'Microsoft Region',
-          hint: 'e.g., eastus, westeurope',
-          onChanged: viewModel.updateMicrosoftRegion,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildSaveButton(SettingsViewModel viewModel) {
-    return ElevatedButton(
-      onPressed: () async {
-        final result = await viewModel.saveSettings();
-
-        result.fold(
-          (exception) {
-            if (context.mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(exception.toString()),
-                  backgroundColor: Colors.red,
-                ),
-              );
-            }
-          },
-          (_) {
-            if (context.mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Settings saved successfully!'),
-                  backgroundColor: Colors.green,
-                ),
-              );
-              const LanguageSelectionRoute().go(context);
-            }
-          },
-        );
-      },
-      style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-      ),
-      child: const Text(
-        'Save and Continue',
-        style: TextStyle(fontSize: 16),
-      ),
-    );
+      );
+    }
   }
 
   @override
@@ -207,25 +116,16 @@ class _SettingsViewState extends State<SettingsView> {
       appBar: AppBar(
         title: const Text('Settings'),
       ),
-      body: BlocConsumer<SettingsViewModel, SettingsState>(
-        listener: (context, state) {
-          _initializeFromState(state);
-        },
+      body: BlocBuilder<SettingsViewModel, SettingsState>(
         builder: (context, state) {
-          if (state.isLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-
-          final viewModel = context.read<SettingsViewModel>();
-          final uniqueLanguages = viewModel.uniqueLanguages;
+          final languages = state.languages;
 
           return SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                // Language Configuration Section
                 const Text(
                   'Language Configuration',
                   style: TextStyle(
@@ -234,26 +134,37 @@ class _SettingsViewState extends State<SettingsView> {
                   ),
                 ),
                 const SizedBox(height: 16),
-                _buildLanguageDropdown(viewModel, uniqueLanguages),
-                const SizedBox(height: 8),
-                if (state.selectedLanguage != null && state.selectedLanguage!.locale.isNotEmpty) ...[
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12.0),
-                    child: Text(
-                      'Selected: ${state.selectedLanguageName} (${state.selectedLanguage!.locale})',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey[600],
-                        fontStyle: FontStyle.italic,
-                      ),
-                    ),
-                  ),
-                ],
+
+                LanguageDropdown(
+                  selectedLanguage: _selectedLanguage,
+                  languages: languages,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedLanguage = value;
+                      if (value != null && value.languageLocal.isNotEmpty) {
+                        _selectedLocal = value.languageLocal.first;
+                      } else {
+                        _selectedLocal = null;
+                      }
+                    });
+                  },
+                ),
                 const SizedBox(height: 16),
-                if (state.availableLocales.isNotEmpty) ...[
-                  _buildLocaleDropdown(viewModel, state.availableLocales),
+
+                if (_selectedLanguage != null && _selectedLanguage!.languageLocal.isNotEmpty) ...[
+                  LocaleDropdown(
+                    selectedLocal: _selectedLocal,
+                    locales: _selectedLanguage!.languageLocal,
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedLocal = value;
+                      });
+                    },
+                  ),
                   const SizedBox(height: 24),
                 ],
+
+                // API Configuration Section
                 const Text(
                   'API Configuration',
                   style: TextStyle(
@@ -262,14 +173,118 @@ class _SettingsViewState extends State<SettingsView> {
                   ),
                 ),
                 const SizedBox(height: 16),
-                _buildApiConfiguration(viewModel),
+
+                // Gemini API Key
+                TextField(
+                  controller: _geminiController,
+                  decoration: const InputDecoration(
+                    labelText: 'Gemini API Key',
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter your Gemini API Key',
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // Microsoft API Key
+                TextField(
+                  controller: _microsoftApiKeyController,
+                  decoration: const InputDecoration(
+                    labelText: 'Microsoft API Key',
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter your Microsoft API Key',
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // Microsoft Region
+                TextField(
+                  controller: _microsoftRegionController,
+                  decoration: const InputDecoration(
+                    labelText: 'Microsoft Region',
+                    border: OutlineInputBorder(),
+                    hintText: 'e.g., eastus, westeurope',
+                  ),
+                ),
                 const SizedBox(height: 24),
-                _buildSaveButton(viewModel),
+
+                // Save Button
+                ElevatedButton(
+                  onPressed: _saveSettings,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                  ),
+                  child: const Text(
+                    'Save and Continue',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
               ],
             ),
           );
         },
       ),
+    );
+  }
+}
+
+class LanguageDropdown extends StatelessWidget {
+  final LanguageData? selectedLanguage;
+  final List<LanguageData> languages;
+  final ValueChanged<LanguageData?> onChanged;
+
+  const LanguageDropdown({
+    Key? key,
+    required this.selectedLanguage,
+    required this.languages,
+    required this.onChanged,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButtonFormField<LanguageData>(
+      decoration: const InputDecoration(
+        labelText: 'Select Language',
+        border: OutlineInputBorder(),
+      ),
+      value: selectedLanguage?.isValid == true ? selectedLanguage : null,
+      items: languages.map((lang) {
+        return DropdownMenuItem(
+          value: lang,
+          child: Text(lang.languageCode),
+        );
+      }).toList(),
+      onChanged: onChanged,
+    );
+  }
+}
+
+class LocaleDropdown extends StatelessWidget {
+  final LanguageLocal? selectedLocal;
+  final List<LanguageLocal> locales;
+  final ValueChanged<LanguageLocal?> onChanged;
+
+  const LocaleDropdown({
+    Key? key,
+    required this.selectedLocal,
+    required this.locales,
+    required this.onChanged,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButtonFormField<LanguageLocal>(
+      decoration: const InputDecoration(
+        labelText: 'Select Locale',
+        border: OutlineInputBorder(),
+      ),
+      value: selectedLocal,
+      items: locales.map((local) {
+        return DropdownMenuItem(
+          value: local,
+          child: Text('${local.locale} (${local.localCode})'),
+        );
+      }).toList(),
+      onChanged: onChanged,
     );
   }
 }

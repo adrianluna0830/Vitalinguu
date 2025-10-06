@@ -15,13 +15,7 @@ class AppSettingsManager {
   AppSettingsManager()
   {
     _appSettings = _storage.getByIdSync(AppSettings.globalId).getOrElse(() => AppSettings(
-      nativeLanguage: LanguageData(
-        fastApiSupported: false,
-        languageCode: '',
-        languageName: '',
-        locale: '',
-        pronunciationAssessmentSupported: false,
-      ),
+      nativeLanguage: LanguageData(languageCode: '', languageLocal: []),
       geminiApiKey: '',
       microsoftApiKey: '',
       microsoftRegion: '',
