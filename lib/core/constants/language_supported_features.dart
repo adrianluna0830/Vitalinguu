@@ -1,1174 +1,1420 @@
 import 'package:vitalinguu/core/language_data/models/language_data.dart';
+import 'package:vitalinguu/core/language_data/models/language_local.dart';
 
 final List<LanguageData> languageDataList = [
   // Afrikaans
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "af-ZA",
-    languageName: "Afrikaans",
-    locale: "South Africa",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Afrikaans",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "af-ZA",
+        locale: "South Africa",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Albanian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "sq-AL",
-    languageName: "Albanian",
-    locale: "Albania",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Albanian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "sq-AL",
+        locale: "Albania",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Amharic
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "am-ET",
-    languageName: "Amharic",
-    locale: "Ethiopia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Amharic",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "am-ET",
+        locale: "Ethiopia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Arabic
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-AE",
-    languageName: "Arabic",
-    locale: "United Arab Emirates",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-BH",
-    languageName: "Arabic",
-    locale: "Bahrain",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "ar-DZ",
-    languageName: "Arabic",
-    locale: "Algeria",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-EG",
-    languageName: "Arabic",
-    locale: "Egypt",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-IL",
-    languageName: "Arabic",
-    locale: "Israel",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-IQ",
-    languageName: "Arabic",
-    locale: "Iraq",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-JO",
-    languageName: "Arabic",
-    locale: "Jordan",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-KW",
-    languageName: "Arabic",
-    locale: "Kuwait",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-LB",
-    languageName: "Arabic",
-    locale: "Lebanon",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-LY",
-    languageName: "Arabic",
-    locale: "Libya",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "ar-MA",
-    languageName: "Arabic",
-    locale: "Morocco",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-OM",
-    languageName: "Arabic",
-    locale: "Oman",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-PS",
-    languageName: "Arabic",
-    locale: "Palestinian Authority",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-QA",
-    languageName: "Arabic",
-    locale: "Qatar",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-SA",
-    languageName: "Arabic",
-    locale: "Saudi Arabia",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "ar-SY",
-    languageName: "Arabic",
-    locale: "Syria",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "ar-TN",
-    languageName: "Arabic",
-    locale: "Tunisia",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "ar-YE",
-    languageName: "Arabic",
-    locale: "Yemen",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Arabic",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ar-AE",
+        locale: "United Arab Emirates",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-BH",
+        locale: "Bahrain",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-DZ",
+        locale: "Algeria",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "ar-EG",
+        locale: "Egypt",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-IL",
+        locale: "Israel",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-IQ",
+        locale: "Iraq",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-JO",
+        locale: "Jordan",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-KW",
+        locale: "Kuwait",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-LB",
+        locale: "Lebanon",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-LY",
+        locale: "Libya",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-MA",
+        locale: "Morocco",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "ar-OM",
+        locale: "Oman",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-PS",
+        locale: "Palestinian Authority",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-QA",
+        locale: "Qatar",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-SA",
+        locale: "Saudi Arabia",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-SY",
+        locale: "Syria",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "ar-TN",
+        locale: "Tunisia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "ar-YE",
+        locale: "Yemen",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Armenian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "hy-AM",
-    languageName: "Armenian",
-    locale: "Armenia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Armenian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "hy-AM",
+        locale: "Armenia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Assamese
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "as-IN",
-    languageName: "Assamese",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Assamese",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "as-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Azerbaijani
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "az-AZ",
-    languageName: "Azerbaijani",
-    locale: "Latin, Azerbaijan",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Azerbaijani",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "az-AZ",
+        locale: "Latin, Azerbaijan",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Basque
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "eu-ES",
-    languageName: "Basque",
-    locale: "Spain",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Basque",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "eu-ES",
+        locale: "Spain",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Bengali
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "bn-IN",
-    languageName: "Bengali",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Bengali",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "bn-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Bosnian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "bs-BA",
-    languageName: "Bosnian",
-    locale: "Bosnia and Herzegovina",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Bosnian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "bs-BA",
+        locale: "Bosnia and Herzegovina",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Bulgarian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "bg-BG",
-    languageName: "Bulgarian",
-    locale: "Bulgaria",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Bulgarian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "bg-BG",
+        locale: "Bulgaria",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Burmese
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "my-MM",
-    languageName: "Burmese",
-    locale: "Myanmar",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Burmese",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "my-MM",
+        locale: "Myanmar",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Catalan
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ca-ES",
-    languageName: "Catalan",
-    locale: "Spain",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Catalan",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ca-ES",
+        locale: "Spain",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Chinese
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "wuu-CN",
-    languageName: "Chinese",
-    locale: "Wu, Simplified",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "yue-CN",
-    languageName: "Chinese",
-    locale: "Cantonese, Simplified",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "zh-CN",
-    languageName: "Chinese",
-    locale: "Mandarin, Simplified",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "zh-CN-shandong",
-    languageName: "Chinese",
-    locale: "Jilu Mandarin, Simplified",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "zh-CN-sichuan",
-    languageName: "Chinese",
-    locale: "Southwestern Mandarin, Simplified",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "zh-HK",
-    languageName: "Chinese",
-    locale: "Cantonese, Traditional",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "zh-TW",
-    languageName: "Chinese",
-    locale: "Taiwanese Mandarin, Traditional",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Chinese",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "wuu-CN",
+        locale: "Wu, Simplified",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "yue-CN",
+        locale: "Cantonese, Simplified",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "zh-CN",
+        locale: "Mandarin, Simplified",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "zh-CN-shandong",
+        locale: "Jilu Mandarin, Simplified",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "zh-CN-sichuan",
+        locale: "Southwestern Mandarin, Simplified",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "zh-HK",
+        locale: "Cantonese, Traditional",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "zh-TW",
+        locale: "Taiwanese Mandarin, Traditional",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Croatian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "hr-HR",
-    languageName: "Croatian",
-    locale: "Croatia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Croatian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "hr-HR",
+        locale: "Croatia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Czech
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "cs-CZ",
-    languageName: "Czech",
-    locale: "Czechia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Czech",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "cs-CZ",
+        locale: "Czechia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Danish
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "da-DK",
-    languageName: "Danish",
-    locale: "Denmark",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Danish",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "da-DK",
+        locale: "Denmark",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Dutch
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "nl-BE",
-    languageName: "Dutch",
-    locale: "Belgium",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "nl-NL",
-    languageName: "Dutch",
-    locale: "Netherlands",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Dutch",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "nl-BE",
+        locale: "Belgium",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "nl-NL",
+        locale: "Netherlands",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // English
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-AU",
-    languageName: "English",
-    locale: "Australia",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-CA",
-    languageName: "English",
-    locale: "Canada",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-GB",
-    languageName: "English",
-    locale: "United Kingdom",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-GH",
-    languageName: "English",
-    locale: "Ghana",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-HK",
-    languageName: "English",
-    locale: "Hong Kong SAR",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-IE",
-    languageName: "English",
-    locale: "Ireland",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-IN",
-    languageName: "English",
-    locale: "India",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-KE",
-    languageName: "English",
-    locale: "Kenya",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-NG",
-    languageName: "English",
-    locale: "Nigeria",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-NZ",
-    languageName: "English",
-    locale: "New Zealand",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-PH",
-    languageName: "English",
-    locale: "Philippines",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-SG",
-    languageName: "English",
-    locale: "Singapore",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-TZ",
-    languageName: "English",
-    locale: "Tanzania",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-US",
-    languageName: "English",
-    locale: "United States",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "en-ZA",
-    languageName: "English",
-    locale: "South Africa",
-    pronunciationAssessmentSupported: false,
+    languageCode: "English",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "en-AU",
+        locale: "Australia",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-CA",
+        locale: "Canada",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-GB",
+        locale: "United Kingdom",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-GH",
+        locale: "Ghana",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-HK",
+        locale: "Hong Kong SAR",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-IE",
+        locale: "Ireland",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-KE",
+        locale: "Kenya",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-NG",
+        locale: "Nigeria",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-NZ",
+        locale: "New Zealand",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-PH",
+        locale: "Philippines",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-SG",
+        locale: "Singapore",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-TZ",
+        locale: "Tanzania",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-US",
+        locale: "United States",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "en-ZA",
+        locale: "South Africa",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Estonian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "et-EE",
-    languageName: "Estonian",
-    locale: "Estonia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Estonian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "et-EE",
+        locale: "Estonia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Filipino
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "fil-PH",
-    languageName: "Filipino",
-    locale: "Philippines",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Filipino",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "fil-PH",
+        locale: "Philippines",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Finnish
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "fi-FI",
-    languageName: "Finnish",
-    locale: "Finland",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Finnish",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "fi-FI",
+        locale: "Finland",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // French
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "fr-BE",
-    languageName: "French",
-    locale: "Belgium",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "fr-CA",
-    languageName: "French",
-    locale: "Canada",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "fr-CH",
-    languageName: "French",
-    locale: "Switzerland",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "fr-FR",
-    languageName: "French",
-    locale: "France",
-    pronunciationAssessmentSupported: true,
+    languageCode: "French",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "fr-BE",
+        locale: "Belgium",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "fr-CA",
+        locale: "Canada",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "fr-CH",
+        locale: "Switzerland",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "fr-FR",
+        locale: "France",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Galician
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "gl-ES",
-    languageName: "Galician",
-    locale: "Spain",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Galician",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "gl-ES",
+        locale: "Spain",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Georgian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ka-GE",
-    languageName: "Georgian",
-    locale: "Georgia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Georgian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ka-GE",
+        locale: "Georgia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // German
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "de-AT",
-    languageName: "German",
-    locale: "Austria",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "de-CH",
-    languageName: "German",
-    locale: "Switzerland",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "de-DE",
-    languageName: "German",
-    locale: "Germany",
-    pronunciationAssessmentSupported: true,
+    languageCode: "German",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "de-AT",
+        locale: "Austria",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "de-CH",
+        locale: "Switzerland",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "de-DE",
+        locale: "Germany",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Greek
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "el-GR",
-    languageName: "Greek",
-    locale: "Greece",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Greek",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "el-GR",
+        locale: "Greece",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Gujarati
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "gu-IN",
-    languageName: "Gujarati",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Gujarati",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "gu-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Hebrew
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "he-IL",
-    languageName: "Hebrew",
-    locale: "Israel",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Hebrew",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "he-IL",
+        locale: "Israel",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Hindi
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "hi-IN",
-    languageName: "Hindi",
-    locale: "India",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Hindi",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "hi-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Hungarian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "hu-HU",
-    languageName: "Hungarian",
-    locale: "Hungary",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Hungarian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "hu-HU",
+        locale: "Hungary",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Icelandic
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "is-IS",
-    languageName: "Icelandic",
-    locale: "Iceland",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Icelandic",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "is-IS",
+        locale: "Iceland",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Indonesian
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "id-ID",
-    languageName: "Indonesian",
-    locale: "Indonesia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Indonesian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "id-ID",
+        locale: "Indonesia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Irish
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ga-IE",
-    languageName: "Irish",
-    locale: "Ireland",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Irish",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ga-IE",
+        locale: "Ireland",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // isiZulu
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "zu-ZA",
-    languageName: "isiZulu",
-    locale: "South Africa",
-    pronunciationAssessmentSupported: false,
+    languageCode: "isiZulu",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "zu-ZA",
+        locale: "South Africa",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Italian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "it-CH",
-    languageName: "Italian",
-    locale: "Switzerland",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "it-IT",
-    languageName: "Italian",
-    locale: "Italy",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Italian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "it-CH",
+        locale: "Switzerland",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "it-IT",
+        locale: "Italy",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Japanese
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "ja-JP",
-    languageName: "Japanese",
-    locale: "Japan",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Japanese",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ja-JP",
+        locale: "Japan",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Javanese
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "jv-ID",
-    languageName: "Javanese",
-    locale: "Latin, Indonesia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Javanese",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "jv-ID",
+        locale: "Latin, Indonesia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Kannada
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "kn-IN",
-    languageName: "Kannada",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Kannada",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "kn-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Kazakh
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "kk-KZ",
-    languageName: "Kazakh",
-    locale: "Kazakhstan",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Kazakh",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "kk-KZ",
+        locale: "Kazakhstan",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Khmer
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "km-KH",
-    languageName: "Khmer",
-    locale: "Cambodia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Khmer",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "km-KH",
+        locale: "Cambodia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Kiswahili
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "sw-KE",
-    languageName: "Kiswahili",
-    locale: "Kenya",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: false,
-    languageCode: "sw-TZ",
-    languageName: "Kiswahili",
-    locale: "Tanzania",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Kiswahili",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "sw-KE",
+        locale: "Kenya",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+      LanguageLocal(
+        localCode: "sw-TZ",
+        locale: "Tanzania",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Korean
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "ko-KR",
-    languageName: "Korean",
-    locale: "Korea",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Korean",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ko-KR",
+        locale: "Korea",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Lao
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "lo-LA",
-    languageName: "Lao",
-    locale: "Laos",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Lao",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "lo-LA",
+        locale: "Laos",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Latvian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "lv-LV",
-    languageName: "Latvian",
-    locale: "Latvia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Latvian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "lv-LV",
+        locale: "Latvia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Lithuanian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "lt-LT",
-    languageName: "Lithuanian",
-    locale: "Lithuania",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Lithuanian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "lt-LT",
+        locale: "Lithuania",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Macedonian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "mk-MK",
-    languageName: "Macedonian",
-    locale: "North Macedonia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Macedonian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "mk-MK",
+        locale: "North Macedonia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Malay
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ms-MY",
-    languageName: "Malay",
-    locale: "Malaysia",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Malay",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ms-MY",
+        locale: "Malaysia",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Malayalam
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ml-IN",
-    languageName: "Malayalam",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Malayalam",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ml-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Maltese
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "mt-MT",
-    languageName: "Maltese",
-    locale: "Malta",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Maltese",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "mt-MT",
+        locale: "Malta",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Marathi
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "mr-IN",
-    languageName: "Marathi",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Marathi",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "mr-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Mongolian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "mn-MN",
-    languageName: "Mongolian",
-    locale: "Mongolia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Mongolian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "mn-MN",
+        locale: "Mongolia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Nepali
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ne-NP",
-    languageName: "Nepali",
-    locale: "Nepal",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Nepali",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ne-NP",
+        locale: "Nepal",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Norwegian Bokmål
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "nb-NO",
-    languageName: "Norwegian Bokmål",
-    locale: "Norway",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Norwegian Bokmål",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "nb-NO",
+        locale: "Norway",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Odia
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "or-IN",
-    languageName: "Odia",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Odia",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "or-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Pashto
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ps-AF",
-    languageName: "Pashto",
-    locale: "Afghanistan",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Pashto",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ps-AF",
+        locale: "Afghanistan",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Persian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "fa-IR",
-    languageName: "Persian",
-    locale: "Iran",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Persian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "fa-IR",
+        locale: "Iran",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Polish
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "pl-PL",
-    languageName: "Polish",
-    locale: "Poland",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Polish",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "pl-PL",
+        locale: "Poland",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Portuguese
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "pt-BR",
-    languageName: "Portuguese",
-    locale: "Brazil",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "pt-PT",
-    languageName: "Portuguese",
-    locale: "Portugal",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Portuguese",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "pt-BR",
+        locale: "Brazil",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "pt-PT",
+        locale: "Portugal",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Punjabi
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "pa-IN",
-    languageName: "Punjabi",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Punjabi",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "pa-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Romanian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ro-RO",
-    languageName: "Romanian",
-    locale: "Romania",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Romanian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ro-RO",
+        locale: "Romania",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Russian
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "ru-RU",
-    languageName: "Russian",
-    locale: "Russia",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Russian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ru-RU",
+        locale: "Russia",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Serbian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "sr-RS",
-    languageName: "Serbian",
-    locale: "Cyrillic, Serbia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Serbian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "sr-RS",
+        locale: "Cyrillic, Serbia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Sinhala
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "si-LK",
-    languageName: "Sinhala",
-    locale: "Sri Lanka",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Sinhala",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "si-LK",
+        locale: "Sri Lanka",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Slovak
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "sk-SK",
-    languageName: "Slovak",
-    locale: "Slovakia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Slovak",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "sk-SK",
+        locale: "Slovakia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Slovenian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "sl-SI",
-    languageName: "Slovenian",
-    locale: "Slovenia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Slovenian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "sl-SI",
+        locale: "Slovenia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Somali
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "so-SO",
-    languageName: "Somali",
-    locale: "Somalia",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Somali",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "so-SO",
+        locale: "Somalia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Spanish
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-AR",
-    languageName: "Spanish",
-    locale: "Argentina",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-BO",
-    languageName: "Spanish",
-    locale: "Bolivia",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-CL",
-    languageName: "Spanish",
-    locale: "Chile",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-CO",
-    languageName: "Spanish",
-    locale: "Colombia",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-CR",
-    languageName: "Spanish",
-    locale: "Costa Rica",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-CU",
-    languageName: "Spanish",
-    locale: "Cuba",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-DO",
-    languageName: "Spanish",
-    locale: "Dominican Republic",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-EC",
-    languageName: "Spanish",
-    locale: "Ecuador",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-ES",
-    languageName: "Spanish",
-    locale: "Spain",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-GQ",
-    languageName: "Spanish",
-    locale: "Equatorial Guinea",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-GT",
-    languageName: "Spanish",
-    locale: "Guatemala",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-HN",
-    languageName: "Spanish",
-    locale: "Honduras",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-MX",
-    languageName: "Spanish",
-    locale: "Mexico",
-    pronunciationAssessmentSupported: true,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-NI",
-    languageName: "Spanish",
-    locale: "Nicaragua",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-PA",
-    languageName: "Spanish",
-    locale: "Panama",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-PE",
-    languageName: "Spanish",
-    locale: "Peru",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-PR",
-    languageName: "Spanish",
-    locale: "Puerto Rico",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-PY",
-    languageName: "Spanish",
-    locale: "Paraguay",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-SV",
-    languageName: "Spanish",
-    locale: "El Salvador",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-US",
-    languageName: "Spanish",
-    locale: "United States",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-UY",
-    languageName: "Spanish",
-    locale: "Uruguay",
-    pronunciationAssessmentSupported: false,
-  ),
-  LanguageData(
-    fastApiSupported: true,
-    languageCode: "es-VE",
-    languageName: "Spanish",
-    locale: "Venezuela",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Spanish",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "es-AR",
+        locale: "Argentina",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-BO",
+        locale: "Bolivia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-CL",
+        locale: "Chile",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-CO",
+        locale: "Colombia",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-CR",
+        locale: "Costa Rica",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-CU",
+        locale: "Cuba",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-DO",
+        locale: "Dominican Republic",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-EC",
+        locale: "Ecuador",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-ES",
+        locale: "Spain",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-GQ",
+        locale: "Equatorial Guinea",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-GT",
+        locale: "Guatemala",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-HN",
+        locale: "Honduras",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-MX",
+        locale: "Mexico",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-NI",
+        locale: "Nicaragua",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-PA",
+        locale: "Panama",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-PE",
+        locale: "Peru",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-PR",
+        locale: "Puerto Rico",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-PY",
+        locale: "Paraguay",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-SV",
+        locale: "El Salvador",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-US",
+        locale: "United States",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-UY",
+        locale: "Uruguay",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+      LanguageLocal(
+        localCode: "es-VE",
+        locale: "Venezuela",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Swedish
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "sv-SE",
-    languageName: "Swedish",
-    locale: "Sweden",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Swedish",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "sv-SE",
+        locale: "Sweden",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Tamil
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ta-IN",
-    languageName: "Tamil",
-    locale: "India",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Tamil",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ta-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Telugu
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "te-IN",
-    languageName: "Telugu",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Telugu",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "te-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Thai
   LanguageData(
-    fastApiSupported: true,
-    languageCode: "th-TH",
-    languageName: "Thai",
-    locale: "Thailand",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Thai",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "th-TH",
+        locale: "Thailand",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: true,
+      ),
+    ],
   ),
 
   // Turkish
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "tr-TR",
-    languageName: "Turkish",
-    locale: "Türkiye",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Turkish",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "tr-TR",
+        locale: "Türkiye",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Ukrainian
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "uk-UA",
-    languageName: "Ukrainian",
-    locale: "Ukraine",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Ukrainian",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "uk-UA",
+        locale: "Ukraine",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Urdu
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "ur-IN",
-    languageName: "Urdu",
-    locale: "India",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Urdu",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "ur-IN",
+        locale: "India",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Uzbek
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "uz-UZ",
-    languageName: "Uzbek",
-    locale: "Latin, Uzbekistan",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Uzbek",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "uz-UZ",
+        locale: "Latin, Uzbekistan",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Vietnamese
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "vi-VN",
-    languageName: "Vietnamese",
-    locale: "Vietnam",
-    pronunciationAssessmentSupported: true,
+    languageCode: "Vietnamese",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "vi-VN",
+        locale: "Vietnam",
+        pronunciationAssessmentSupported: true,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 
   // Welsh
   LanguageData(
-    fastApiSupported: false,
-    languageCode: "cy-GB",
-    languageName: "Welsh",
-    locale: "United Kingdom",
-    pronunciationAssessmentSupported: false,
+    languageCode: "Welsh",
+    languageLocal: [
+      LanguageLocal(
+        localCode: "cy-GB",
+        locale: "United Kingdom",
+        pronunciationAssessmentSupported: false,
+        fastApiSupported: false,
+      ),
+    ],
   ),
 ];

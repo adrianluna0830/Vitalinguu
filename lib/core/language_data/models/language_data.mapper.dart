@@ -14,6 +14,7 @@ class LanguageDataMapper extends ClassMapperBase<LanguageData> {
   static LanguageDataMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = LanguageDataMapper._());
+      LanguageLocalMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -21,33 +22,14 @@ class LanguageDataMapper extends ClassMapperBase<LanguageData> {
   @override
   final String id = 'LanguageData';
 
-  static bool _$fastApiSupported(LanguageData v) => v.fastApiSupported;
-  static const Field<LanguageData, bool> _f$fastApiSupported = Field(
-    'fastApiSupported',
-    _$fastApiSupported,
-  );
   static String _$languageCode(LanguageData v) => v.languageCode;
   static const Field<LanguageData, String> _f$languageCode = Field(
     'languageCode',
     _$languageCode,
   );
-  static String _$languageName(LanguageData v) => v.languageName;
-  static const Field<LanguageData, String> _f$languageName = Field(
-    'languageName',
-    _$languageName,
-  );
-  static String _$locale(LanguageData v) => v.locale;
-  static const Field<LanguageData, String> _f$locale = Field(
-    'locale',
-    _$locale,
-  );
-  static bool _$pronunciationAssessmentSupported(LanguageData v) =>
-      v.pronunciationAssessmentSupported;
-  static const Field<LanguageData, bool> _f$pronunciationAssessmentSupported =
-      Field(
-        'pronunciationAssessmentSupported',
-        _$pronunciationAssessmentSupported,
-      );
+  static List<LanguageLocal> _$languageLocal(LanguageData v) => v.languageLocal;
+  static const Field<LanguageData, List<LanguageLocal>> _f$languageLocal =
+      Field('languageLocal', _$languageLocal);
   static bool _$isValid(LanguageData v) => v.isValid;
   static const Field<LanguageData, bool> _f$isValid = Field(
     'isValid',
@@ -57,23 +39,15 @@ class LanguageDataMapper extends ClassMapperBase<LanguageData> {
 
   @override
   final MappableFields<LanguageData> fields = const {
-    #fastApiSupported: _f$fastApiSupported,
     #languageCode: _f$languageCode,
-    #languageName: _f$languageName,
-    #locale: _f$locale,
-    #pronunciationAssessmentSupported: _f$pronunciationAssessmentSupported,
+    #languageLocal: _f$languageLocal,
     #isValid: _f$isValid,
   };
 
   static LanguageData _instantiate(DecodingData data) {
     return LanguageData(
-      fastApiSupported: data.dec(_f$fastApiSupported),
       languageCode: data.dec(_f$languageCode),
-      languageName: data.dec(_f$languageName),
-      locale: data.dec(_f$locale),
-      pronunciationAssessmentSupported: data.dec(
-        _f$pronunciationAssessmentSupported,
-      ),
+      languageLocal: data.dec(_f$languageLocal),
     );
   }
 
@@ -139,13 +113,13 @@ extension LanguageDataValueCopy<$R, $Out>
 
 abstract class LanguageDataCopyWith<$R, $In extends LanguageData, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({
-    bool? fastApiSupported,
-    String? languageCode,
-    String? languageName,
-    String? locale,
-    bool? pronunciationAssessmentSupported,
-  });
+  ListCopyWith<
+    $R,
+    LanguageLocal,
+    LanguageLocalCopyWith<$R, LanguageLocal, LanguageLocal>
+  >
+  get languageLocal;
+  $R call({String? languageCode, List<LanguageLocal>? languageLocal});
   LanguageDataCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -158,32 +132,27 @@ class _LanguageDataCopyWithImpl<$R, $Out>
   late final ClassMapperBase<LanguageData> $mapper =
       LanguageDataMapper.ensureInitialized();
   @override
-  $R call({
-    bool? fastApiSupported,
-    String? languageCode,
-    String? languageName,
-    String? locale,
-    bool? pronunciationAssessmentSupported,
-  }) => $apply(
+  ListCopyWith<
+    $R,
+    LanguageLocal,
+    LanguageLocalCopyWith<$R, LanguageLocal, LanguageLocal>
+  >
+  get languageLocal => ListCopyWith(
+    $value.languageLocal,
+    (v, t) => v.copyWith.$chain(t),
+    (v) => call(languageLocal: v),
+  );
+  @override
+  $R call({String? languageCode, List<LanguageLocal>? languageLocal}) => $apply(
     FieldCopyWithData({
-      if (fastApiSupported != null) #fastApiSupported: fastApiSupported,
       if (languageCode != null) #languageCode: languageCode,
-      if (languageName != null) #languageName: languageName,
-      if (locale != null) #locale: locale,
-      if (pronunciationAssessmentSupported != null)
-        #pronunciationAssessmentSupported: pronunciationAssessmentSupported,
+      if (languageLocal != null) #languageLocal: languageLocal,
     }),
   );
   @override
   LanguageData $make(CopyWithData data) => LanguageData(
-    fastApiSupported: data.get(#fastApiSupported, or: $value.fastApiSupported),
     languageCode: data.get(#languageCode, or: $value.languageCode),
-    languageName: data.get(#languageName, or: $value.languageName),
-    locale: data.get(#locale, or: $value.locale),
-    pronunciationAssessmentSupported: data.get(
-      #pronunciationAssessmentSupported,
-      or: $value.pronunciationAssessmentSupported,
-    ),
+    languageLocal: data.get(#languageLocal, or: $value.languageLocal),
   );
 
   @override
