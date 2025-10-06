@@ -10,7 +10,7 @@ void main() async {
   Hive.registerAdapters();
 
   await configureDependencies();
-  final GoRouter router = GoRouter(routes: $appRoutes, initialLocation: LanguageSelectionRoute().location);
+  final GoRouter router = GoRouter(routes: $appRoutes, initialLocation: SettingsRoute().location);
   runApp(MaterialApp.router(
     routerConfig: router
   ));
