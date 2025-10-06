@@ -16,6 +16,8 @@ import 'package:vitalinguu/core/language_data/models/language_data.dart'
 import 'package:vitalinguu/core/language_data/view_models/language_data_manager.dart'
     as _i133;
 import 'package:vitalinguu/core/settings/models/app_settings.dart' as _i777;
+import 'package:vitalinguu/core/settings/view_models/app_settings_manager.dart'
+    as _i327;
 import 'package:vitalinguu/core/storage/generic_storage_resolvers.dart'
     as _i190;
 import 'package:vitalinguu/core/storage/storage_interface.dart' as _i283;
@@ -38,6 +40,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i133.LanguageDataManager>(
       () => _i133.LanguageDataManager(),
+    );
+    gh.lazySingleton<_i327.AppSettingsManager>(
+      () => _i327.AppSettingsManager(),
     );
     return this;
   }
