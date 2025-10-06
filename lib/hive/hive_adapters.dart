@@ -10,5 +10,4 @@ part 'hive_adapters.g.dart';
   AdapterSpec<LanguageData>(),
   AdapterSpec<LanguageProgressData>(),
 ])
-
 class HiveAdapters {}

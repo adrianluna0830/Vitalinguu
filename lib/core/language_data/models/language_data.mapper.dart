@@ -48,6 +48,12 @@ class LanguageDataMapper extends ClassMapperBase<LanguageData> {
         'pronunciationAssessmentSupported',
         _$pronunciationAssessmentSupported,
       );
+  static bool _$isValid(LanguageData v) => v.isValid;
+  static const Field<LanguageData, bool> _f$isValid = Field(
+    'isValid',
+    _$isValid,
+    mode: FieldMode.member,
+  );
 
   @override
   final MappableFields<LanguageData> fields = const {
@@ -56,6 +62,7 @@ class LanguageDataMapper extends ClassMapperBase<LanguageData> {
     #languageName: _f$languageName,
     #locale: _f$locale,
     #pronunciationAssessmentSupported: _f$pronunciationAssessmentSupported,
+    #isValid: _f$isValid,
   };
 
   static LanguageData _instantiate(DecodingData data) {

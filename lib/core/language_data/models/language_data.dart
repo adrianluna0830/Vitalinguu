@@ -19,5 +19,8 @@ class LanguageData extends IdBase<String> with LanguageDataMappable {
     required this.pronunciationAssessmentSupported,
   });
 
-
+  bool get isValid =>
+      languageCode.trim().isNotEmpty &&
+      languageName.trim().isNotEmpty &&
+      locale.trim().isNotEmpty;
 }

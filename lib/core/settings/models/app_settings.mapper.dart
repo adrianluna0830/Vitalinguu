@@ -14,6 +14,7 @@ class AppSettingsMapper extends ClassMapperBase<AppSettings> {
   static AppSettingsMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AppSettingsMapper._());
+      LanguageDataMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -21,8 +22,8 @@ class AppSettingsMapper extends ClassMapperBase<AppSettings> {
   @override
   final String id = 'AppSettings';
 
-  static String _$nativeLanguage(AppSettings v) => v.nativeLanguage;
-  static const Field<AppSettings, String> _f$nativeLanguage = Field(
+  static LanguageData _$nativeLanguage(AppSettings v) => v.nativeLanguage;
+  static const Field<AppSettings, LanguageData> _f$nativeLanguage = Field(
     'nativeLanguage',
     _$nativeLanguage,
   );
@@ -126,8 +127,9 @@ extension AppSettingsValueCopy<$R, $Out>
 
 abstract class AppSettingsCopyWith<$R, $In extends AppSettings, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
+  LanguageDataCopyWith<$R, LanguageData, LanguageData> get nativeLanguage;
   $R call({
-    String? nativeLanguage,
+    LanguageData? nativeLanguage,
     String? geminiApiKey,
     String? microsoftApiKey,
     String? microsoftRegion,
@@ -144,8 +146,11 @@ class _AppSettingsCopyWithImpl<$R, $Out>
   late final ClassMapperBase<AppSettings> $mapper =
       AppSettingsMapper.ensureInitialized();
   @override
+  LanguageDataCopyWith<$R, LanguageData, LanguageData> get nativeLanguage =>
+      $value.nativeLanguage.copyWith.$chain((v) => call(nativeLanguage: v));
+  @override
   $R call({
-    String? nativeLanguage,
+    LanguageData? nativeLanguage,
     String? geminiApiKey,
     String? microsoftApiKey,
     String? microsoftRegion,
