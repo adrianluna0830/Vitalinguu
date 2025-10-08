@@ -49,32 +49,6 @@ class AppSettingsAdapter extends TypeAdapter<AppSettings> {
           typeId == other.typeId;
 }
 
-class LanguageProgressDataAdapter extends TypeAdapter<LanguageProgressData> {
-  @override
-  final typeId = 2;
-
-  @override
-  LanguageProgressData read(BinaryReader reader) {
-    reader.readByte();
-    return LanguageProgressData();
-  }
-
-  @override
-  void write(BinaryWriter writer, LanguageProgressData obj) {
-    writer.writeByte(0);
-  }
-
-  @override
-  int get hashCode => typeId.hashCode;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is LanguageProgressDataAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
-}
-
 class LanguageLocalAdapter extends TypeAdapter<LanguageLocal> {
   @override
   final typeId = 3;

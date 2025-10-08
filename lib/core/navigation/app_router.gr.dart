@@ -41,7 +41,7 @@ class SettingsRoute extends _i3.PageRouteInfo<void> {
   static _i3.PageInfo page = _i3.PageInfo(
     name,
     builder: (data) {
-      return _i3.WrappedRoute(child: const _i2.SettingsView());
+      return const _i2.SettingsView();
     },
   );
 }

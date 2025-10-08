@@ -54,12 +54,7 @@ class HiveStorage<T extends IdBase> implements StorageInterface<T>
     await box.put(item.id, item);
   }
   
-  @override
-  Option<T> getByIdSync(String id) {
-    // Hivez es completamente async, esta función necesitará ser async también
-    // Por ahora retornamos None() ya que no hay soporte síncrono en Hivez
-    return Option.none();
-  }
+
   
   @override
   Future<int> count() async {

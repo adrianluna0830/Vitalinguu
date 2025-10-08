@@ -15,10 +15,6 @@ types:
         index: 2
       microsoftRegion:
         index: 3
-  LanguageProgressData:
-    typeId: 2
-    nextIndex: 0
-    fields: {}
   LanguageLocal:
     typeId: 3
     nextIndex: 4
