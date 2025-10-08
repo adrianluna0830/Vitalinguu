@@ -41,8 +41,13 @@ extension GetItInjectableX on _i174.GetIt {
       () => modules.languagesDataStorage,
       preResolve: true,
     );
-    gh.lazySingleton<_i327.AppSettingsManager>(
-      () => _i327.AppSettingsManager(),
+    gh.factoryAsync<_i327.AppSettingsManager>(
+      () async {
+        final manager = _i327.AppSettingsManager();
+        await manager.initialize();
+        return manager;
+      },
+      preResolve: true,
     );
     gh.factory<_i923.SettingsGuard>(
       () => _i923.SettingsGuard(gh<_i327.AppSettingsManager>()),

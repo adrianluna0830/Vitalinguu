@@ -37,8 +37,7 @@ dependencies:
   auto_route: ^10.1.2
   flutter_bloc: ^9.1.1
   bloc: ^9.0.1
-  hive_ce: ^2.14.0
-  hive_ce_flutter: ^2.3.2
+  hivez_flutter: ^1.0.0
   equatable: ^2.0.7
   get_it: ^8.2.0
   injectable: ^2.5.2

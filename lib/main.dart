@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vitalinguu/core/navigation/app_router.dart';
 import 'package:vitalinguu/hive/hive_registrar.g.dart';
 import 'package:vitalinguu/injection.dart';
-import 'package:hive_ce_flutter/hive_flutter.dart';
+import 'package:hivez_flutter/hivez_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

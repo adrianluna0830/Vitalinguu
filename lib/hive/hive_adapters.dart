@@ -1,4 +1,4 @@
-import 'package:hive_ce/hive.dart';
+import 'package:hivez_flutter/hivez_flutter.dart';
 import 'package:vitalinguu/core/language_data/models/language_data.dart';
 import 'package:vitalinguu/core/language_data/models/language_local.dart';
 import 'package:vitalinguu/core/language_progress/models/language_progress_data.dart';
